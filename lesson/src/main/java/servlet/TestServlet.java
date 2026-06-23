@@ -8,21 +8,19 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/TestServlet")
+@WebServlet("/test")
 public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		System.out.println("GETリクエストがありました");
 	}
 
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		String name = request.getParameter("name");
-		String age = request.getParameter("age");
-		String address = request.getParameter("address");
-		System.out.println
-		  (name + ":" + age + ":" + address);
+		System.out.println("POSTリクエストがありました");
+		doGet(request, response);
 	}
+
 
 }
