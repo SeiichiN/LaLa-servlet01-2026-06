@@ -14,7 +14,9 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private static final Pattern ID_PATTERN = Pattern.compile("\\w+");
-	private static final Pattern PASSWORD_PATTERN = Pattern.compile("\\w{4,8}");
+	// private static final Pattern PASSWORD_PATTERN = Pattern.compile("\\w{4,8}");
+	private static final Pattern PASSWORD_PATTERN = 
+			Pattern.compile("(\\d|[a-z]|[A-Z]|[!@#\\$%\\^&\\*()_]){4,8}");
 	
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
