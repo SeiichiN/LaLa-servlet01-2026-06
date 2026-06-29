@@ -1,0 +1,27 @@
+数当てゲーム
+
+1. kazuateプロジェクトの作成
+
+2. ゲームの流れ
+   kazuate.jsp --> KazuateServlet
+
+3. kazuate.jspの作成
+     a. 1～9 の好きな数字を入力できるようにする。
+     b. KazuateServlet に送信
+     c. action属性、name属性、type属性は任意。
+     d. method属性は "post" とする。
+     
+4. KazuateServlet の作成
+     a. @WebServletアノテーションは任意。
+     b. 1～9のどれかをランダムに決めて、変数comに代入。
+          new Random().nextInt(9) + 1
+          (int)(Math.random() * 9) + 1
+     c. jspからのデータを受け取り、変数userに代入。
+     d. 変数userに代入するときに、整数に変換しておく。
+           Integer.parseInt()
+     e. user > com なら、"大きすぎます"
+        user < com なら、"小さすぎます"
+        user == com なら、"正解です" を表示する。
+        その文字列は任意の変数に代入する。
+     f. その変数を表示する。
+     
